@@ -9,6 +9,7 @@ let abierto = false;
 let openClose = () =>{
     if(abierto == false){
         menu.classList.add("menu2");
+
         abierto= true;
     } else if (abierto == true){
         menu.classList.remove("menu2");
@@ -29,3 +30,5 @@ let closeWindow= (e) =>{
     }
 }
 window.addEventListener("click", closeWindow)
+// scroll bug
+ window.addEventListener("scroll", closeWindow);
