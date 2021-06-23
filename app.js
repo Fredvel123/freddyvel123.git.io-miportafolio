@@ -21,12 +21,10 @@ click.addEventListener("click", openClose)
 // codigo para cerrar tocando cualquier parte de la pantalla
 
 let closeWindow= (e) =>{
-    placeOpen = e.target;
-    if(abierto){
-        if(placeOpen !== click){
-            openClose();
-            abierto=false
-        }
+    let placeOpen = e.target;
+    if(placeOpen !== click & placeOpen !== menu & abierto){
+        openClose();
+        abierto=false;
     }
 }
 window.addEventListener("click", closeWindow)

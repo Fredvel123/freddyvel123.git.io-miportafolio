@@ -1,4 +1,4 @@
-*{
+* {
     margin: 0;
     padding: 0;
     text-decoration: none;
@@ -7,9 +7,8 @@
 }
 
 /* Codigo para el banner */
-
-.banner{
-    background-image:  linear-gradient(rgba(0, 0, 0, .5), #009688), url(img/1.jpg);
+.banner {
+    background-image: linear-gradient(rgba(0, 0, 0, .5), #009688), url(img/1.jpg);
     width: 100%;
     height: 100vh;
     background-position: center;
@@ -18,105 +17,213 @@
 }
 
 /* Codigo para el header */
-
-header{
+header {
     background: #07bba9;
     display: grid;
     grid-template-columns: 35% 65%;
     grid-template-rows: 80px 0;
+    position: fixed;
+    width: 100%;
 }
 
 /* codigo para el logo*/
-.logo{
+.logo {
     font-size: 35px;
     display: flex;
     justify-content: center;
     align-items: center;
     font-family: 'Quicksand', sans-serif;
 }
+
 /* codigo para el menu*/
-.menu{
+.menu {
     display: flex;
     justify-content: flex-end;
     align-items: center;
 }
-.menu a{
-    
+
+.menu a {
     font-size: 18px;
     color: #fff;
-    margin: 20px;
+    margin: 15px;
     padding: 5px;
     font-family: 'Noto Sans', sans-serif;
     font-family: 'Quicksand', sans-serif;
 }
 
-.icono{
+.icono {
     display: none;
 }
+
 /* codigo para el texto de inicio*/
-.caja{
-    text-align: center;
-    padding-top: 220px;
+.banner .caja {
+    width: 100%;
+    height: 100vh;
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
-p{
-    font-size: 35px;
-    font-family: 'Quicksand', sans-serif;
-}
-h1{
+
+.text1 {
     font-size: 50px;
-    font-family: 'Overpass', sans-serif;
+    font-family: 'Quicksand', sans-serif;
+    text-align: center;
 }
+
+.text2 {
+    font-size: 35px;
+    font-family: 'Overpass', sans-serif;
+    text-align: center;
+}
+
 /* media queries para el menu responsive*/
-@media screen and (max-width:800px) {
-    header{
+
+/* para computadoras mas pequeñas o tablets*/
+@media screen and (max-width: 1060px) {
+    .menu a {
+        font-size: 15px;
+        color: #fff;
+        margin: 5px;
+        padding: 5px;
+        font-family: 'Noto Sans', sans-serif;
+        font-family: 'Quicksand', sans-serif;
+    }
+
+    .banner {
+        background-image: linear-gradient(rgba(0, 0, 0, .5), #009688), url(img/1.jpg);
+        width: 100%;
+        height: 600px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    header {
+        position: fixed;
+        width: 100%;
+    }
+
+    .banner .caja {
+        width: 100%;
+        height: 600px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .text1 {
+        font-size: 30px;
+        font-family: 'Quicksand', sans-serif;
+    }
+
+    .text2 {
+        font-size: 15px;
+        font-family: 'Overpass', sans-serif;
+    }
+}
+
+/* para dispositivos moviles*/
+@media screen and (max-width:810px) {
+
+    /* header y banner */
+    header {
         display: grid;
         grid-template-columns: 80% 20%;
-        grid-template-rows: 80px ;
+        grid-template-rows: 80px;
+        position: fixed;
+        width: 100%;
     }
-    .logo{
+
+    .banner {
+        background-image: linear-gradient(rgba(0, 0, 0, .5), #009688), url(img/1.jpg);
+        width: 100%;
+        height: 700px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .logo {
         display: flex;
         justify-content: flex-start;
         padding-left: 25px;
     }
-    .icono{
+
+    .icono {
         margin: auto;
         display: block;
     }
-    .menu a{
-        font-size: 20px;
-        margin-bottom: 80px;
+
+    /*Codigo para el menu interactivo con javascript*/
+    .menu a {
+        font-size: 21px;
     }
-    
-    .menu{
-        background: #139e9036;
-        position: absolute;
+
+    .menu {
+        background: #0372678f;
+        position: fixed;
         top: 80px;
         left: 0;
         width: 60%;
-        height: 100vh;
+        height: 760px;
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
         align-items: center;
         transform: translateX(-100%);
-        transition: .5s;
-
-    
-
-        backdrop-filter: blur(5px);
+        transition: .1s;
+        backdrop-filter: blur(6px);
     }
-    .menu2{
+
+    .menu2 {
         transform: translateX(0);
         transition: .5s;
     }
 
-    p{
-        font-size: 15px;
+    .banner .caja {
+        width: 100%;
+        height: 700px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .text1 {
+        font-size: 30px;
         font-family: 'Quicksand', sans-serif;
     }
-    h1{
-        font-size: 30px;
+
+    .text2 {
+        font-size: 15px;
         font-family: 'Overpass', sans-serif;
     }
-    
+}
+
+/* FIN DEL MEDIA QUERIE */
+
+/* Codigo para el about me*/
+
+#about_me {
+    background: rgb(97, 116, 116);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 30px;
+    flex-wrap: wrap;
+}
+
+h1 {
+    font-size: 30px;
+    margin: 50px;
+}
+
+p {
+    font-size: 25px;
+    width: 70%;
+    margin: 20px;
 }
