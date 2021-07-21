@@ -4,13 +4,18 @@
     text-decoration: none;
     list-style: none;
     color: #fff;
+    scroll-behavior: smooth;
 }
-
+body{ 
+    background: #dbdbdbf5;
+}
 /* Codigo para el banner */
 .banner {
-    background-image: linear-gradient(rgba(0, 0, 0, .5), #009688), url(img/1.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.445), rgb(0, 0, 0)), url(img/IMG3.jpg);
     width: 100%;
     height: 100vh;
+    background-attachment: fixed;
+
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -18,12 +23,13 @@
 
 /* Codigo para el header */
 header {
-    background: #07bba9;
+    background: #000000fd;
     display: grid;
     grid-template-columns: 35% 65%;
     grid-template-rows: 80px 0;
     position: fixed;
     width: 100%;
+
 }
 
 /* codigo para el logo*/
@@ -33,7 +39,13 @@ header {
     justify-content: center;
     align-items: center;
     font-family: 'Quicksand', sans-serif;
+    
 }
+.logo a{
+    color: #05ff3b;
+}
+
+
 
 /* codigo para el menu*/
 .menu {
@@ -44,12 +56,20 @@ header {
 
 .menu a {
     font-size: 18px;
-    color: #fff;
+    color: #05ff3b;
     margin: 15px;
-    padding: 5px;
-    font-family: 'Noto Sans', sans-serif;
-    font-family: 'Quicksand', sans-serif;
+    padding: 8px;
+    font-family: 'Encode Sans SC', sans-serif;
+    border: 1px solid #05ff3b;
+    transition: .2s;
 }
+.menu a:hover{
+    color: #111;
+    background: #05ff3b;
+    box-shadow: 0 0 2.5px #05ff3b, 0 0 10px #05ff3b,
+    0 0 20px #05ff3b;
+}
+
 
 .icono {
     display: none;
@@ -64,6 +84,15 @@ header {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    
+}
+
+.caja .caja__backgound{
+    display: inline;
+    background-color: #7c7c7c18;
+    padding: 5px 20px;
+    
+
 }
 
 .text1 {
@@ -87,12 +116,13 @@ header {
         color: #fff;
         margin: 5px;
         padding: 5px;
-        font-family: 'Noto Sans', sans-serif;
-        font-family: 'Quicksand', sans-serif;
+        font-family: 'Encode Sans SC', sans-serif;
+        color: #05ff3b;
     }
 
+    
+
     .banner {
-        background-image: linear-gradient(rgba(0, 0, 0, .5), #009688), url(img/1.jpg);
         width: 100%;
         height: 600px;
         background-position: center;
@@ -138,7 +168,6 @@ header {
     }
 
     .banner {
-        background-image: linear-gradient(rgba(0, 0, 0, .5), #009688), url(img/1.jpg);
         width: 100%;
         height: 700px;
         background-position: center;
@@ -155,20 +184,28 @@ header {
     .icono {
         margin: auto;
         display: block;
+        padding-top: 10px;
     }
 
     /*Codigo para el menu interactivo con javascript*/
+    .caja__backgound{
+        display: none;
+        
+    }
     .menu a {
         font-size: 21px;
+        font-family: 'Encode Sans SC', sans-serif;
+        border: none;
+        color: #fff;
     }
 
     .menu {
-        background: #0372678f;
+        background: #55555554;
         position: fixed;
         top: 80px;
         left: 0;
         width: 60%;
-        height: 760px;
+        height: 90%;
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
@@ -201,6 +238,14 @@ header {
         font-size: 15px;
         font-family: 'Overpass', sans-serif;
     }
+    .caja .caja__backgound{
+        display: inline;
+        background-color: #7c7c7c18;
+        padding: 5px 20px;
+        backdrop-filter: none;
+    
+    }
+    
 }
 
 /* FIN DEL MEDIA QUERIE */
