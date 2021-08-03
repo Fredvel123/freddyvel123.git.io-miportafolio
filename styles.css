@@ -3,7 +3,10 @@
     padding: 0;
     text-decoration: none;
     list-style: none;
+    
     color: #fff;
+}
+html{
     scroll-behavior: smooth;
 }
 body{ 
@@ -11,10 +14,10 @@ body{
 }
 /* Codigo para el banner */
 .banner {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.445), rgb(0, 0, 0)), url("https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.445), #0cafa28f), url("https://images.unsplash.com/photo-1510915228340-29c85a43dcfe?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80");
     width: 100%;
     height: 100%;
-    /*background-attachment: fixed;*/
+    background-attachment: fixed;
 
     background-position: center;
     background-repeat: no-repeat;
@@ -23,7 +26,7 @@ body{
 
 /* Codigo para el header */
 header {
-    background: #000000fd;
+    background: #000000;
     display: grid;
     grid-template-columns: 35% 65%;
     grid-template-rows: 80px 0;
@@ -42,7 +45,7 @@ header {
     
 }
 .logo a{
-    color: #05ff3b;
+    color: #13fae7;
 }
 
 
@@ -54,20 +57,41 @@ header {
     align-items: center;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Volkhov:ital@1&display=swap');
 .menu a {
+    font-family: 'Volkhov', serif;
     font-size: 18px;
-    color: #05ff3b;
+    color: #13fae7;
     margin: 15px;
     padding: 8px;
     font-family: 'Encode Sans SC', sans-serif;
-    border: 1px solid #05ff3b;
+    margin-left: 50px;
     transition: .2s;
+    position: relative;
+    letter-spacing: 1px;
 }
-.menu a:hover{
-    color: #111;
-    background: #05ff3b;
-    box-shadow: 0 0 2.5px #05ff3b, 0 0 10px #05ff3b,
-    0 0 20px #05ff3b;
+.menu .color_menu:hover{
+    color: #37ff62;
+    transition: .5s;
+}
+.menu .color_menu:after{
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%) scaleX(0);
+    -webkit-transform: translateX(-50%) scaleX(0);
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    width: 100%;
+    height: 2px;
+    background-color: rgb(55, 255, 98);
+    -webkit-transition: transform 250ms;
+    transition: transform 250ms;
+}
+.menu .color_menu:hover:after{
+    -webkit-transform: translateX(-50%) scaleX(1);
+    transform: translateX(-50%) scaleX(1);
 }
 
 
@@ -89,8 +113,10 @@ header {
 
 .caja .caja__backgound{
     display: inline;
-    background-color: #7c7c7c18;
+    background-color: #7c7c7c33;
     padding: 5px 20px;
+    height: auto;
+    padding-bottom: 20px;
     
 
 }
@@ -106,22 +132,57 @@ header {
     font-family: 'Overpass', sans-serif;
     text-align: center;
 }
+/* get started */
+.caja__backgound .caja__background__text{
+    text-align: center;
+    padding: 15px;
+}
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Batang&display=swap');
+.caja__backgound .caja__background__text h2 {
+    display: inline-block;
+    font-size: 18px;
+    text-transform: uppercase;
+    background: rgba(0, 0, 0, 0);
+    font-family: 'Gowun Batang', serif !important; 
+    transition: .5s;
+    width: 165px;
+    text-decoration: none;
+    margin: 0 10px;
+    padding: 12px 0;
+    border: .5px solid #13fae7 ;
+    color: #13fae7;
+    letter-spacing: 2px;
+}
+.caja__backgound .caja__background__text h2:hover{
+    background: #13fae7 ;
+    box-shadow: 0 0 2.5px #13fae7 , 0 0 10px #13fae7 ,
+    0 0 20px #13fae7 ;
+    color: #000;
+}
+
 
 /* media queries para el menu responsive*/
 
 /* para computadoras mas pequeñas o tablets*/
 @media screen and (max-width: 1060px) {
-    .menu a {
+    .menu .color_menu{
         font-size: 15px;
-        color: #fff;
         margin: 5px;
         padding: 5px;
         font-family: 'Encode Sans SC', sans-serif;
-        color: #05ff3b;
+        color: #13fae7;
     }
-
+    .menu .color_menu:hover{
+        content: none;
+        color: #13fae7;
+    }
+    .menu .color_menu:after{
+        content: none;
+    }
+    .menu .color_menu:hover:after{
+        content: none;   
+    }
     
-
     .banner {
         width: 100%;
         height: 85%;
@@ -146,14 +207,27 @@ header {
     }
 
     .text1 {
-        font-size: 30px;
+        font-size: 45px;
         font-family: 'Quicksand', sans-serif;
     }
 
     .text2 {
-        font-size: 15px;
+        font-size: 30px;
         font-family: 'Overpass', sans-serif;
     }
+    /* get started */
+    .caja__backgound .caja__background__text{
+        text-align: center;
+        margin-top: 16px;
+    }
+    .caja__backgound .caja__background__text h2{
+        box-sizing: border-box;
+        display: inline;
+        padding: 12px;
+        font-size: 21px;
+        text-transform: uppercase;
+    }
+
 }
 
 /* para dispositivos moviles*/
@@ -195,7 +269,7 @@ header {
         display: none;
         
     }
-    .menu a {
+    .menu .color_menu {
         font-size: 21px;
         font-family: 'Encode Sans SC', sans-serif;
         border: none;
@@ -233,22 +307,50 @@ header {
     }
 
     .text1 {
-        font-size: 30px;
+        font-size: 35px;
         font-family: 'Quicksand', sans-serif;
     }
 
     .text2 {
-        font-size: 15px;
+        font-size: 21px;
         font-family: 'Overpass', sans-serif;
     }
-    .caja .caja__backgound{
+    /* get started */
+    .caja__backgound .caja__background__text{
+        text-align: center;
+        margin-top: 11px;
+    }
+    .caja__backgound .caja__background__text h2{
+        box-sizing: border-box;
         display: inline;
-        background-color: #7c7c7c18;
-        padding: 5px 20px;
-        backdrop-filter: none;
-    
+        padding: 9px;
+        font-size: 13px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
     }
     
+}
+@media screen and (max-width:400px) {
+    .caja .caja__backgound{
+        padding-top: 25px;
+    }
+    .caja__background__text{
+        text-align: center;
+        margin-top: 11px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+    }
+    .caja__backgound .caja__background__text h2{
+        padding: 13px;
+        font-size: 13px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-top: 10px;
+        width: 200px;
+        height: 50px;
+    }
 }
 
 /* FIN DEL MEDIA QUERIE */

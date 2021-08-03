@@ -29,4 +29,7 @@ let closeWindow= (e) =>{
 }
 window.addEventListener("click", closeWindow)
 // scroll bug
- window.addEventListener("scroll", closeWindow);
+window.addEventListener("scroll", closeWindow);
+
+ // codigo para que el "hover" del menu en Css no afecte la optimacicion en tablets
+
