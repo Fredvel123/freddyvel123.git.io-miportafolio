@@ -9,12 +9,7 @@ html{
     scroll-behavior: smooth;
 }
 body{ 
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-self: flex-start;
-    flex-wrap: nowrap;
-    background: #dbdbdbf5;
+    display: block;
 }
 /* Codigo para el banner */
 .banner {
@@ -36,7 +31,7 @@ header {
     grid-template-rows: 80px 0;
     position: fixed;
     width: 100%;
-    
+    transform: none;   
 }
 
 /* codigo para el logo*/
@@ -98,9 +93,40 @@ header {
     transform: translateX(-50%) scaleX(1);
 }
 
-
+/* code for the barnav responsive */
 .icono {
     display: none;
+}
+.menu-nav2{
+    display: none;
+}
+@media screen and (max-width: 550px){
+    .banner .logo{
+        display: none;
+    }
+    .icono{
+        display: none !important;
+    }
+    .footer{
+        margin-bottom: 12vh;
+    }
+    header{
+        display: flex !important;
+        justify-content: center;
+        position: fixed;
+    }
+    .banner{
+        height: 88vh !important;
+    }
+    .menu-nav2{
+        background-color: rgb(14, 20, 22);
+        display: flex;
+        width: 100%;
+        position: fixed;
+        height: 12vh;
+        justify-content: space-evenly;
+        align-items: center;
+    }
 }
 
 /* codigo para el texto de inicio*/
@@ -421,7 +447,6 @@ p {
 
 /* ----------- Codigo para los logos de las cards ----------- */
 .skills_section_information .skills_section_cards{
-    background: #184bd6a9;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -431,6 +456,7 @@ p {
 @media screen and (max-width: 1000px){
     .skills_section_information .skills_section_cards{
         height: auto;
+        width: auto;
     }
     
     
@@ -442,16 +468,28 @@ p {
 .skills_section_information .fondo_cards .img_logo{
     display: flex;
     flex-direction: column;
-    background: rgb(56, 56, 56);
+    background: rgb(15, 36, 95);
     width: 300px;
     height: 350px;
     transition: .1s;
 }
 .skills_section_information .fondo_cards .img_logo:hover{
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.466);
-    transform: translatey(-5%);
+    transform: translatey(-3%);
+    
 }
-
+@media screen and (max-width: 1100px){
+    .skills_section_information .fondo_cards .img_logo{
+        display: flex;
+        flex-direction: column;
+        background: rgb(15, 36, 95);
+        width: 300px;
+        height: 350px;
+    }
+    .skills_section_information .fondo_cards .img_logo:hover{
+        transform: none;
+    } 
+}
 
 .skills_section_information .fondo_cards .img_logo img{
     height: 100px;
@@ -462,22 +500,33 @@ p {
 
 
 /* Codigo para los textos dentro de las tarjetas */
-.img_logo{
+
+.img_logo {
     margin: 15px 5px;
     display: flex;
     align-items: center;
     justify-content: flex-start;
     height: 450px;
+    border-radius: 15px;
+}
+.fondo_cards .img_logo .container_letter {
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
 .fondo_cards .img_logo .letter {
     display: flex;
     align-items: center;
-    
-    height:30px;
+    height: 40px;
 }
 .fondo_cards .img_logo .letter img{
-    height: 37px;
-    width: 37px;
+    height: 23px;
+    width: 23px;
+}
+.fondo_cards .img_logo .container_letter .letter p{
+    font-size: 17px;
+    
 }
 
 
@@ -492,7 +541,6 @@ p {
 
 /* Social media netWork Contac me */
 .contact_me{
-    width: 100%;
     height: 150px;
     background: #0f0f0f;
     flex-direction: column;
@@ -547,6 +595,7 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
+    
 }
 @import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap');
 .footer h2{
